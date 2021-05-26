@@ -1,26 +1,45 @@
 import React from 'react'
 import { productList } from "./ProductList";
 import { BiRupee } from "react-icons/bi";
+import { AiFillStar } from "react-icons/ai";
+import { useCart } from '../context/Cart-Context';
 
 export function Products() {
+    const { itemsInCart, setItemsInCart } = useCart();
     return (
-        <>
-            <h1>This is Products</h1>
+        <div className="product-container">
             <div className="product-side-bar">
                 this will contain sorting and filter
             </div>
             <div className="product-listing-container">
-                {productList.map(({ id, imageUrl, name, price, mrp, rating }) => (
-                    <div className="product-display-card" key={id}>
+                {productList.map((item) => (
+                    <div className="product-display-card" key={item.id}>
                         <div className="image-wishBtn-container">
-                            <img src={imageUrl} alt="" />
+                            <img src={item.imageUrl} alt="" className="product-image" />
                         </div>
-                        <h3 className="product-name">{name}</h3>
-                        <p className="product-price">< BiRupee /> {price} <span style={{ textDecoration: "line-through" }}> {mrp}</span></p>
-                        <p className="product-rating"> {rating}</p>
+                        <h2 className="product-name">{item.name}</h2>
+                        <p className="product-price">
+                            <span className="price-span">
+                                < BiRupee /> {item.price}
+                            </span>
+                            <span style={{ textDecoration: "line-through" }}>
+                                {item.mrp}
+                            </span></p>
+                        <p className="product-rating">
+                            {item.rating}/5 <AiFillStar />
+                        </p>
+                        {itemsInCart.id === item.id ? <p>go to cart</p> :
+                            <button
+                                onClick={() =>
+                                    setItemsInCart((currentItems) => [...currentItems, item])
+                                }
+                            >
+                                Add to Cart
+                        </button>
+                        }
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }

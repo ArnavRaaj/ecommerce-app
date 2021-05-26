@@ -1,9 +1,16 @@
 import React from 'react'
+import { useCart } from "../context/Cart-Context"
+import { CartItem } from "./CartItem";
 
 export function Cart() {
+    const { itemsInCart } = useCart();
     return (
         <div>
-            <h1>This is Cart</h1>
+            <ul>
+                {itemsInCart.map((item) => (
+                    <CartItem item={item} />
+                ))}
+            </ul>
         </div>
     )
 }
