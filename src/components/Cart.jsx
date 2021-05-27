@@ -6,11 +6,11 @@ export function Cart() {
     const { itemsInCart } = useCart();
     return (
         <div>
-            <ul>
-                {itemsInCart.map((item) => (
+            {itemsInCart.length === 0 ?
+                <p className="empty-cart-msg">Your Cart is empty. Please add to some Products</p> :
+                itemsInCart.map((item) => (
                     <CartItem item={item} />
                 ))}
-            </ul>
         </div>
     )
 }

@@ -1,11 +1,16 @@
 import React from 'react'
+import "../css/product.css"
 import { productList } from "./ProductList";
 import { BiRupee } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import { useCart } from '../context/Cart-Context';
+import { useWish } from '../context/Wishlist-Context';
+import { BsHeart } from "react-icons/bs"
+import { FiShoppingCart } from "react-icons/fi"
 
 export function Products() {
-    const { itemsInCart, setItemsInCart } = useCart();
+    const { setItemsInCart } = useCart();
+    const { setWishlist } = useWish()
     return (
         <div className="product-container">
             <div className="product-side-bar">
@@ -14,29 +19,29 @@ export function Products() {
             <div className="product-listing-container">
                 {productList.map((item) => (
                     <div className="product-display-card" key={item.id}>
-                        <div className="image-wishBtn-container">
-                            <img src={item.imageUrl} alt="" className="product-image" />
-                        </div>
-                        <h2 className="product-name">{item.name}</h2>
+                        <img src={item.imageUrl} alt="" className="product-image" />
+                        <h3 className="product-name">{item.name}</h3>
                         <p className="product-price">
                             <span className="price-span">
-                                < BiRupee /> {item.price}
+                                < BiRupee className="icons rupee-icon" />{item.price}
                             </span>
-                            <span style={{ textDecoration: "line-through" }}>
-                                {item.mrp}
-                            </span></p>
-                        <p className="product-rating">
-                            {item.rating}/5 <AiFillStar />
+
+                            <span className="mrp-span">
+                                MRP< BiRupee className="icons rupee-icon" />{item.mrp}
+                            </span>
                         </p>
-                        {itemsInCart.id === item.id ? <p>go to cart</p> :
+                        <p className="product-rating">
+                            {item.rating}/5 <AiFillStar className="icons rating-icon" />
+                        </p>
+                        <div className="btn-container">
+                            <button className="addToCart-btn product-btn" onClick={() => setItemsInCart((currentItems) => [item, ...currentItems])}>
+                                Add to Cart <FiShoppingCart className="addToCart-wish-icon" />
+                            </button>
                             <button
-                                onClick={() =>
-                                    setItemsInCart((currentItems) => [...currentItems, item])
-                                }
-                            >
-                                Add to Cart
+                            className="addToWish-btn product-btn" onClick={() => setWishlist((currentItems) => [item, ...currentItems])}>
+                                Add to Wishlist <BsHeart className="addToCart-wish-icon"/>
                         </button>
-                        }
+                        </div>
                     </div>
                 ))}
             </div>

@@ -1,9 +1,16 @@
 import React from 'react'
+import { useWish } from '../context/Wishlist-Context'
+import { WishItems } from "./WishItems";
 
 export function Wishlist() {
+    const { wish } = useWish();
     return (
         <div>
-            <h1>This is Wishlist</h1>
+            {wish.length === 0 ?
+                <p className="empty-wishlist-msg">Your wishlist is empty. Please add some Products.</p> :
+                wish.map((item) => (
+                    < WishItems item={item} />
+                ))}
         </div>
     )
 }
