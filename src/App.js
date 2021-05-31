@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import { Home } from "./components/Home";
 import { Products } from "./components/Products";
-import { Cart } from "./components/Cart";
+import { Cart } from "./components/cart/Cart";
 import { Wishlist } from "./components/Wishlist";
 import { FiShoppingCart } from "react-icons/fi";
 import { BsHeart } from "react-icons/bs";
