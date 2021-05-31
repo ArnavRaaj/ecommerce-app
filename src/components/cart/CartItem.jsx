@@ -21,7 +21,9 @@ export function CartItem({ item }) {
                         </p>
                     </div>
                     <div className="remove-btn-container">
-                        <button onClick={() => cartDispatch({ type: "REMOVE_FROM_CART", payload: item })} className="remove-btn btn"> < MdDelete /></button>
+                        <button onClick={() => cartDispatch({ type: "REMOVE_FROM_CART", payload: item })} className="remove-btn btn">
+                            < MdDelete />
+                        </button>
                     </div>
                 </div>
 

@@ -1,0 +1,36 @@
+.cart-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    margin : 2rem 1rem ;
+    padding: 1rem;
+}
+
+.total-price-container{
+    margin-left: auto;
+    max-width: 25rem;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: -1px 1px 17px -1px rgba(0, 0, 0, 0.4);
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+/* product total amount */
+.order-summary{
+    margin-bottom: 1rem;
+}
+
+.total-products, .shipping, .total-amount-container{
+    display: flex;   
+    justify-content: space-between;
+    margin: 0.5rem;
+}
