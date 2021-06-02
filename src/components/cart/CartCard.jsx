@@ -3,6 +3,7 @@ import { useCart } from "../../context/Cart-Context";
 import { CartItem } from "./CartItem";
 import { CartTotalPrice } from './CartTotalPrice';
 import { BiRupee } from "react-icons/bi";
+import "../../css/style.css"
 
 export function CartCard() {
     const { cartState, cartDispatch } = useCart();
@@ -13,7 +14,7 @@ export function CartCard() {
                 ? <p>Cart page</p>
                 : <div className="cart-container">
                     <div className="clear-cart-container">
-                        <button onClick={() => cartDispatch({ type: "CLEAR_CART", payload: cartState.itemsInCart })} className="clear-cart-btn">
+                        <button onClick={() => cartDispatch({ type: "CLEAR_CART", payload: cartState.itemsInCart })} className="clear-cart-btn ">
                             Clear Cart
                         </button>
                         {cartState.itemsInCart.map((item) => (

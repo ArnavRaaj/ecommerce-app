@@ -9,7 +9,7 @@ import { BsHeart } from "react-icons/bs";
 import { useCart } from "./context/Cart-Context";
 
 function App() {
-  const [route, setRoute] = useState("home");
+  const [route, setRoute] = useState("products");
   const {cartState} = useCart()
   return (
     <div className="App">

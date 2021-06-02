@@ -34,13 +34,13 @@ export function Products() {
                             {item.rating}/5 <AiFillStar className="icons rating-icon" />
                         </p>
                         <div className="btn-container">
-                            <button className="addToCart-btn product-btn" onClick={() => cartDispatch({ type: "ADD_TO_CART" , payload: item})}>
-                                Add to Cart <FiShoppingCart className="addToCart-wish-icon" />
+                            <button className="addToCart-btn product-btn" onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: item })}>
+                                Add to Cart <FiShoppingCart className="addTo-Cart-wish-icon" />
                             </button>
                             <button
-                            className="addToWish-btn product-btn" onClick={() => setWishlist((currentItems) => [item, ...currentItems])}>
-                                Add to Wishlist <BsHeart className="addToCart-wish-icon"/>
-                        </button>
+                                className="addToWish-btn product-btn" onClick={() => setWishlist((currentItems) => [item, ...currentItems])}>
+                                Add to Wishlist <BsHeart className="addTo-Cart-wish-icon" />
+                            </button>
                         </div>
                     </div>
                 ))}

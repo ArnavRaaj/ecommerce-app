@@ -1,36 +1,121 @@
-.cart-container{
+.cart-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1;
-    margin : 2rem 1rem ;
-    padding: 1rem;
+    padding: 2rem 10rem;
+    background-color: var(--secondary-bg-color);
+    min-height: 100vh;
 }
 
-.total-price-container{
+/* product total amount */
+.total-price-container {
     margin-left: auto;
     max-width: 25rem;
     width: 100%;
     padding: 1rem;
-    box-shadow: -1px 1px 17px -1px rgba(0, 0, 0, 0.4);
     height: 30vh;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: column;
     justify-content: center;
+    background-color: var(--primary-bg-color);
+    border-radius: 0.8rem;
+    margin-top: 5rem;
 }
 
-
-
-
-/* product total amount */
-.order-summary{
+.order-summary {
     margin-bottom: 1rem;
 }
 
-.total-products, .shipping, .total-amount-container{
-    display: flex;   
+.total-amount-container,
+.cart-action-btn {
+    padding-top: 1rem;
+    border-top: 0.1rem solid #eee;
+}
+
+.total-products,
+.shipping,
+.total-amount-container {
+    display: flex;
     justify-content: space-between;
     margin: 0.5rem;
+}
+
+/* clear cart btn */
+.clear-cart-btn {
+    background-color: var(--tertiary-btn-color);
+    margin-left: 1rem;
+    padding: 1rem;
+    border: none;
+}
+
+/************ CART-ITEM-DISPLAY *************/
+.cart-item-display-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    margin: 2rem 1rem;
+    padding: 1rem;
+    background-color: var(--primary-bg-color);
+    border-radius: 0.8rem;
+    max-width: 50rem;
+    min-width: 30rem;
+    width: 100%;
+}
+
+.cart-item-remove-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cart-product-name {
+    margin-bottom: 1rem;
+}
+
+.cart-price-span {
+    background-color: #ffea29;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.cart-rating-span {
+    margin: 1rem 0.5rem;
+}
+
+/* action btn - inc/dec btn */
+.cart-action-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-quantity {
+    border-radius: 0.5rem;
+    border: 0.01rem solid var(--primary-font-color);
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+}
+
+.cart-btn {
+    background-color: var(--secondary-bg-color);
+    border: none;
+    padding: 0.5rem 1.2rem;
+    margin: 0.5rem;
+}
+
+/* remove btn */
+.remove-btn {
+    font-size: 1.3rem;
+}
+
+/* common css */
+.clear-cart-btn,
+.cart-price-span,
+.cart-rating-span,
+.cart-btn {
+    border-radius: 0.5rem 0.5rem 0.5rem 0rem;
 }
