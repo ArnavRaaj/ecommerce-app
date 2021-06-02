@@ -62,7 +62,6 @@
     background-color: var(--primary-bg-color);
     border-radius: 0.8rem;
     max-width: 50rem;
-    min-width: 30rem;
     width: 100%;
 }
 
@@ -118,4 +117,98 @@
 .cart-rating-span,
 .cart-btn {
     border-radius: 0.5rem 0.5rem 0.5rem 0rem;
+}
+
+/******************* RESPONSIVE DESIGN *****************/
+@media (max-width: 480px) {
+    .cart-container {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 1rem;
+        min-height: 100vh;
+    }
+
+    .total-price-container {
+        padding: 1rem;
+        height: max-content;
+        justify-content: center;
+        margin: 1rem 0rem;
+    }
+
+    .cart-item-display-container {
+        margin: 1rem 0rem;
+    }
+
+    .clear-cart-btn {
+        margin-left: 0rem;
+    }
+
+    .product-image {
+        height: 10rem;
+        width: 10rem;
+        align-self: center;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .cart-container {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 1rem 3rem;
+        min-height: 100vh;
+    }
+
+    .total-price-container {
+        padding: 1rem;
+        height: max-content;
+        justify-content: center;
+        margin: 1rem 0rem;
+    }
+
+    .cart-item-display-container {
+        margin: 1rem 0rem;
+    }
+
+    .clear-cart-btn {
+        margin-left: 0rem;
+    }
+
+    .product-image {
+        height: 10rem;
+        width: 10rem;
+        align-self: center;
+    }
+    
+}
+
+@media (max-width: 1024px) {
+    .cart-container {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 1rem 5rem;
+        min-height: 100vh;
+    }
+
+    .total-price-container {
+        padding: 1rem;
+        height: max-content;
+        justify-content: center;
+        margin: 1rem 0rem;
+    }
+
+    .cart-item-display-container {
+        margin: 1rem 0rem;
+    }
+
+    .clear-cart-btn {
+        margin-left: 0rem;
+    }
+
+    .product-image {
+        height: 10rem;
+        width: 10rem;
+        align-self: center;
+    }
+    
 }

@@ -10,7 +10,7 @@ import { FiShoppingCart } from "react-icons/fi"
 
 export function Products() {
     const { cartDispatch } = useCart();
-    const { setWishlist } = useWish()
+    const { wishDispatch } = useWish()
     return (
         <div className="product-container">
             <div className="product-side-bar">
@@ -34,11 +34,14 @@ export function Products() {
                             {item.rating}/5 <AiFillStar className="icons rating-icon" />
                         </p>
                         <div className="btn-container">
-                            <button className="addToCart-btn product-btn" onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: item })}>
+                            <button
+                                className="addToCart-btn product-btn"
+                                onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: item })}>
                                 Add to Cart <FiShoppingCart className="addTo-Cart-wish-icon" />
                             </button>
                             <button
-                                className="addToWish-btn product-btn" onClick={() => setWishlist((currentItems) => [item, ...currentItems])}>
+                                className="addToWish-btn product-btn"
+                                onClick={() => wishDispatch({ type: "ADD_TO_WISHLIST", payload: item })}>
                                 Add to Wishlist <BsHeart className="addTo-Cart-wish-icon" />
                             </button>
                         </div>

@@ -11,10 +11,15 @@ export function CartCard() {
     return (
         <div>
             { cartState.itemsInCart.length === 0
-                ? <p>Cart page</p>
-                : <div className="cart-container">
+                ?
+                <p className="empty-cart-msg">
+                    Cart page
+                </p>
+                :
+                <div className="cart-container">
                     <div className="clear-cart-container">
-                        <button onClick={() => cartDispatch({ type: "CLEAR_CART", payload: cartState.itemsInCart })} className="clear-cart-btn ">
+                        <button
+                            onClick={() => cartDispatch({ type: "CLEAR_CART", payload: cartState.itemsInCart })} className="clear-cart-btn ">
                             Clear Cart
                         </button>
                         {cartState.itemsInCart.map((item) => (
@@ -41,7 +46,6 @@ export function CartCard() {
                             </span>
                         </div>
                     </div>
-
                 </div>
             }
         </div>

@@ -3,14 +3,16 @@ import "../src/css/style.css";
 import { Home } from "./components/Home";
 import { Products } from "./components/Products";
 import { Cart } from "./components/cart/Cart";
-import { Wishlist } from "./components/Wishlist";
+import { Wishlist } from "./components/wishlist/Wishlist";
 import { FiShoppingCart } from "react-icons/fi";
 import { BsHeart } from "react-icons/bs";
 import { useCart } from "./context/Cart-Context";
+import { useWish } from "./context/Wishlist-Context";
 
 function App() {
   const [route, setRoute] = useState("products");
-  const {cartState} = useCart()
+  const { cartState } = useCart();
+  const { wishState } = useWish();
   return (
     <div className="App">
       <nav className="navbar">
@@ -19,7 +21,7 @@ function App() {
             <span className="w-class">W </span>
             <span className="wayfarlon">Wayfarlon</span>
           </button>
-          <button className="btn product-btn" onClick={() => setRoute("products")}>Products</button>
+          <button className="product-nav-btn" onClick={() => setRoute("products")}>Products</button>
         </div>
 
         <div className="navbar-right-component">
@@ -38,7 +40,7 @@ function App() {
               <BsHeart className="nav-icons wishlist-icon" />
             </button>
             <span className="notification-badge">
-              0
+              {wishState.itemsInWishlist.length}
             </span>
           </div>
 
