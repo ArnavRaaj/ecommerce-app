@@ -1,23 +1,29 @@
 import React from 'react'
-import "../css/product.css";
+import "../../css/product.css";
 import { productList } from "./ProductList";
 import { BiRupee } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
-import { useCart } from '../context/Cart-Context';
-import { useWish } from '../context/Wishlist-Context';
+import { useCart } from '../../context/Cart-Context';
+import { useWish } from '../../context/Wishlist-Context';
 import { BsHeart } from "react-icons/bs"
 import { FiShoppingCart } from "react-icons/fi"
+import { Sidebar } from './Sidebar';
+import { useProduct } from '../../context/Product-context';
+import {filterByPrice} from "./Sidebar";
 
 export function Products() {
     const { cartDispatch } = useCart();
-    const { wishDispatch } = useWish()
+    const { wishDispatch } = useWish();
+    const {  priceSort } = useProduct();
+    const filteredData = filterByPrice(productList, priceSort);
+    console.log(filteredData);
     return (
         <div className="product-container">
             <div className="product-side-bar">
-                this will contain sorting and filter
+                <Sidebar />
             </div>
             <div className="product-listing-container">
-                {productList.map((item) => (
+                {filteredData.map((item) => (
                     <div className="product-display-card" key={item.id}>
                         <img src={item.imageUrl} alt="" className="product-image" />
                         <h3 className="product-name">{item.name}</h3>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../src/css/style.css";
 import { Home } from "./components/Home";
-import { Products } from "./components/Products";
+import { Products } from "./components/products/Products";
 import { Cart } from "./components/cart/Cart";
 import { Wishlist } from "./components/wishlist/Wishlist";
 import { FiShoppingCart } from "react-icons/fi";

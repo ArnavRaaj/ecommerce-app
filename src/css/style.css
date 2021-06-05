@@ -2,6 +2,7 @@
 @import url("./cartStyle.css");
 @import url("./navbar.css");
 @import url("./wishlist.css");
+@import url("./sidebar.css");
 
 /* OVERALL USED CSS */
 * {
@@ -24,7 +25,7 @@ a {
 :root {
     --primary-bg-color: #ffffff;
     --secondary-bg-color: #ecececc4;
-    --primary-font-color: #3e3f4d;
+    --primary-font-color: #424453;
     --primary-btn-color: #0082c3;
     --secondary-btn-color: #ffea29;
     --tertiary-btn-color: #bedeef;

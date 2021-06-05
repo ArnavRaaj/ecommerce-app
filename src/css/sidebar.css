@@ -1,0 +1,36 @@
+/* side bar */
+.product-side-bar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 20rem;
+    width: 100%;
+    max-height: 100vh;
+    padding: 1rem 0.5rem;
+    margin: 3rem 1rem;
+    background-color: var(--primary-bg-color);
+}
+
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    border-bottom: 0.1rem solid #eee;
+    padding-bottom: 0.5rem;
+    width: max-content;
+}
+
+.dropdown-sort{
+    margin: 1rem 0rem;
+}
+
+.sort-icon{
+    margin-right: 0.5rem;
+}
+
+.price-sort-label{
+    margin-right: 0.5rem;
+}

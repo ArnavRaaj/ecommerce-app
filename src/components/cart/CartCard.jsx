@@ -2,7 +2,6 @@ import React from 'react';
 import { useCart } from "../../context/Cart-Context";
 import { CartItem } from "./CartItem";
 import { CartTotalPrice } from './CartTotalPrice';
-import { BiRupee } from "react-icons/bi";
 import "../../css/style.css"
 
 export function CartCard() {
@@ -31,8 +30,8 @@ export function CartCard() {
                         <div className="summary-content">
                             <p className="total-products">
                                 Total Products (Inc GST)
-                                <span className="total-product-amount">
-                                    <CartTotalPrice />
+                                <span className="total-amount">
+                                     ₹ <CartTotalPrice />
                                 </span>
                             </p>
                             <p className="shipping"> Shipping
@@ -42,7 +41,7 @@ export function CartCard() {
                         <div className="total-amount-container">
                             <h3> Total </h3>
                             <span className="total-amount">
-                                <sapn>₹ </sapn> <CartTotalPrice />
+                            ₹  <CartTotalPrice />
                             </span>
                         </div>
                     </div>

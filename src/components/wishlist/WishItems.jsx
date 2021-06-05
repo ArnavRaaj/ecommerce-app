@@ -10,7 +10,15 @@ export function WishItems({ item }) {
     return (
         <div className="wishlist-display-container" key={item.id}>
             <div className="cart-item-details">
-                <img src={item.imageUrl} alt="" className="wishlist-product-image" />
+                <div className="mobile-view">
+                    <img src={item.imageUrl} alt="" className="wishlist-product-image" />
+                    <button
+                    onClick={() => wishDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item })}
+                    className="remove-btn cart-btn mobile-view-btn"
+                >
+                    < MdDelete />
+                </button>
+                </div>
                 <h3 className="cart-product-name">{item.name}</h3>
                 <span className="cart-price-span">
                     < BiRupee className="icons rupee-icon" />{item.price}
@@ -22,7 +30,7 @@ export function WishItems({ item }) {
             <div className="remove-btn-container">
                 <button
                     onClick={() => wishDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item })}
-                    className="remove-btn cart-btn"
+                    className="remove-btn cart-btn desktop-view-btn"
                 >
                     < MdDelete />
                 </button>

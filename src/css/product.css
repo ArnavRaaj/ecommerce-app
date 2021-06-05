@@ -4,15 +4,6 @@
     background-color: var(--secondary-bg-color);
 }
 
-/* side bar */
-.product-side-bar {
-    width: 100%;
-    max-width: 15rem;
-    padding: 1rem;
-    border: 0.1rem solid black;
-    margin: 1rem;
-    background-color: var(--primary-bg-color);
-}
 
 /* product listing */
 .product-listing-container {

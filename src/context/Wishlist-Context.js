@@ -20,7 +20,7 @@ function wishReducer(wishState, action) {
             return {
                 ...wishState, itemsInWishlist: []
             };
-            
+                   
         default:
             return wishState;
     }

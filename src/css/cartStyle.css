@@ -25,6 +25,9 @@
     margin-top: 5rem;
 }
 
+.total-amount{
+    display: flex;
+}
 .order-summary {
     margin-bottom: 1rem;
 }
@@ -120,41 +123,10 @@
 }
 
 /******************* RESPONSIVE DESIGN *****************/
-@media (max-width: 480px) {
+@media screen and (max-width: 1200px) {
     .cart-container {
         display: flex;
-        flex-direction: column-reverse;
-        padding: 1rem;
-        min-height: 100vh;
-    }
-
-    .total-price-container {
-        padding: 1rem;
-        height: max-content;
-        justify-content: center;
-        margin: 1rem 0rem;
-    }
-
-    .cart-item-display-container {
-        margin: 1rem 0rem;
-    }
-
-    .clear-cart-btn {
-        margin-left: 0rem;
-    }
-
-    .product-image {
-        height: 10rem;
-        width: 10rem;
-        align-self: center;
-    }
-    
-}
-
-@media (max-width: 768px) {
-    .cart-container {
-        display: flex;
-        flex-direction: column-reverse;
+        flex-direction: row;
         padding: 1rem 3rem;
         min-height: 100vh;
     }
@@ -164,25 +136,24 @@
         height: max-content;
         justify-content: center;
         margin: 1rem 0rem;
+        margin-top: 5rem;
     }
 
     .cart-item-display-container {
-        margin: 1rem 0rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex: 1;
+        margin: 2rem 1rem;
+        padding: 1rem;
+        background-color: var(--primary-bg-color);
+        border-radius: 0.8rem;
+        max-width: 40rem;
+        width: 90%;
     }
-
-    .clear-cart-btn {
-        margin-left: 0rem;
-    }
-
-    .product-image {
-        height: 10rem;
-        width: 10rem;
-        align-self: center;
-    }
-    
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .cart-container {
         display: flex;
         flex-direction: column-reverse;
@@ -199,6 +170,8 @@
 
     .cart-item-display-container {
         margin: 1rem 0rem;
+        max-width: 50rem;
+        width: 100%;
     }
 
     .clear-cart-btn {
@@ -210,5 +183,16 @@
         width: 10rem;
         align-self: center;
     }
-    
+}
+
+@media (max-width: 768px) {
+    .cart-container {
+        padding: 1rem 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-container {
+        padding: 1rem;
+    }
 }
