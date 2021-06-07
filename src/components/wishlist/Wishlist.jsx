@@ -9,9 +9,12 @@ export function Wishlist() {
         <div>
             {wishState.itemsInWishlist.length === 0
                 ?
-                <p className="empty-wishlist-msg">
-                    Your wishlist is empty. Please add some Products.
-                </p>
+                <div className="empty-cart-container">
+                    <p className="empty-cart-msg">
+                        Your Wishlist is empty. 
+                        Let's make some wishes!
+                    </p>
+                </div>
                 :
                 <div className="wishlist-container">
                     <button

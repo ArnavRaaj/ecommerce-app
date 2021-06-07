@@ -10,7 +10,7 @@ import { useCart } from "./context/Cart-Context";
 import { useWish } from "./context/Wishlist-Context";
 
 function App() {
-  const [route, setRoute] = useState("products");
+  const [route, setRoute] = useState("home");
   const { cartState } = useCart();
   const { wishState } = useWish();
   return (

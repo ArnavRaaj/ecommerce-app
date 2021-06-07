@@ -1,5 +1,4 @@
 import { createContext, useReducer, useContext } from "react";
-import { productList } from "../components/products/ProductList";
 
 const ProductContext = createContext();
 
@@ -7,20 +6,49 @@ function productReducer(state, action) {
     switch (action.type) {
         case "HIGH_TO_LOW":
             return {
-                ...state, priceSort: action.payload,
+                ...state, sortItemBy: action.payload,
             };
 
         case "LOW_TO_HIGH":
             return {
-                ...state, priceSort: action.payload,
+                ...state, sortItemBy: action.payload,
             }
+
+        case "ALL_ITEMS":
+            return {
+                ...state, sortItemBy: action.payload,
+            }
+
+        case "RATING":
+            return {
+                ...state, sortItemBy: action.payload,
+            }
+
+        case "TOGGLE_STOCK":
+            return {
+                ...state, sortStockBy: action.payload === true ? "inStock" : "allStock"
+            }
+
+        case "TOGGLE_DELIVERY":
+            return {
+                ...state, sortDeliveryBy: action.payload === true ? "deliverFast" : "allDeliveries"
+            }
+
+        case "PRICE_RANGE":
+            return {
+                ...state, priceRange: action.payload
+            }
+
         default:
             return state;
     }
 }
 
 const initialState = {
-    priceSort: "lowToHigh"
+    sortItemBy: "allItems",
+    sortStockBy: "allStock",
+    sortDeliveryBy: "allDeliveries",
+    priceRange: "12999"
 }
 
 export const ProductProvider = ({ children }) => {
@@ -33,9 +61,32 @@ export const ProductProvider = ({ children }) => {
         if (e.target.value === "lowToHigh") {
             dispatch({ type: "LOW_TO_HIGH", payload: e.target.value })
         }
+        if (e.target.value === "allItems") {
+            dispatch({ type: "ALL_ITEMS", payload: e.target.value })
+        }
+        if (e.target.value === "rating") {
+            dispatch({ type: "RATING", payload: e.target.value })
+        }
     };
+
+    const sortByStock = (e) => {
+        if (e.target.checked === "allStock") {
+            dispatch({ type: "TOGGLE_STOCK", payload: e.target.checked })
+        } dispatch({ type: "TOGGLE_STOCK", payload: e.target.checked })
+    }
+
+    const sortByDelivery = (e) => {
+        if (e.target.checked === "allDeliveries") {
+            dispatch({ type: "TOGGLE_DELIVERY", payload: e.target.checked })
+        } dispatch({ type: "TOGGLE_DELIVERY", payload: e.target.checked })
+    }
+
+    const sortByPriceRange = (e) => {
+        dispatch({ type: "PRICE_RANGE", payload: e.target.value })
+    }
+
     return (
-        <ProductContext.Provider value={{ ...state, sortByPrice, dispatch }}>
+        <ProductContext.Provider value={{ ...state, sortByPrice, sortByStock, sortByDelivery, sortByPriceRange, dispatch }}>
             {children}
         </ProductContext.Provider>
     )

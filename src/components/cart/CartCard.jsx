@@ -11,9 +11,11 @@ export function CartCard() {
         <div>
             { cartState.itemsInCart.length === 0
                 ?
-                <p className="empty-cart-msg">
-                    Cart page
-                </p>
+                <div className="empty-cart-container">
+                    <p className="empty-cart-msg">
+                        Your Cart is empty
+                    </p>
+                </div>
                 :
                 <div className="cart-container">
                     <div className="clear-cart-container">
@@ -31,7 +33,7 @@ export function CartCard() {
                             <p className="total-products">
                                 Total Products (Inc GST)
                                 <span className="total-amount">
-                                     ₹ <CartTotalPrice />
+                                    ₹ <CartTotalPrice />
                                 </span>
                             </p>
                             <p className="shipping"> Shipping
@@ -41,7 +43,7 @@ export function CartCard() {
                         <div className="total-amount-container">
                             <h3> Total </h3>
                             <span className="total-amount">
-                            ₹  <CartTotalPrice />
+                                ₹  <CartTotalPrice />
                             </span>
                         </div>
                     </div>

@@ -9,14 +9,15 @@ import { BsHeart } from "react-icons/bs"
 import { FiShoppingCart } from "react-icons/fi"
 import { Sidebar } from './Sidebar';
 import { useProduct } from '../../context/Product-context';
-import {filterByPrice} from "./Sidebar";
+import { filterByPrice, filterByStock, filterByDelivery, filterByPriceRange } from "./Sidebar";
 
 export function Products() {
     const { cartDispatch } = useCart();
     const { wishDispatch } = useWish();
-    const {  priceSort } = useProduct();
-    const filteredData = filterByPrice(productList, priceSort);
-    console.log(filteredData);
+    const { sortItemBy, sortStockBy, sortDeliveryBy, priceRange } = useProduct();
+    const filteredData = filterByPriceRange(filterByDelivery(filterByStock(filterByPrice(productList, sortItemBy),sortStockBy),sortDeliveryBy), priceRange);
+    // console.log(priceRange, "price --- range");
+    // console.log(" filtered data.....",filteredData);
     return (
         <div className="product-container">
             <div className="product-side-bar">
@@ -40,11 +41,22 @@ export function Products() {
                             {item.rating}/5 <AiFillStar className="icons rating-icon" />
                         </p>
                         <div className="btn-container">
-                            <button
-                                className="addToCart-btn product-btn"
-                                onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: item })}>
-                                Add to Cart <FiShoppingCart className="addTo-Cart-wish-icon" />
-                            </button>
+                            {item.inStock &&
+                                <button
+                                    className="addToCart-btn product-btn"
+                                    onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: item })}>
+                                    Add to Cart <FiShoppingCart className="addTo-Cart-wish-icon" />
+                                </button>
+                            }
+                            {
+                                !item.inStock &&
+                                <button
+                                    className="OutOfStock-btn product-btn"
+                                    onClick={() => alert("Out of stock")}>
+                                    Out of Stock
+                                </button>
+                            }
+
                             <button
                                 className="addToWish-btn product-btn"
                                 onClick={() => wishDispatch({ type: "ADD_TO_WISHLIST", payload: item })}>

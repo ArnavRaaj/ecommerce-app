@@ -4,10 +4,12 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 20rem;
+    justify-content: center;
+    max-width: 17rem;
     width: 100%;
-    max-height: 100vh;
-    padding: 1rem 0.5rem;
+    max-height: 45vh;
+    padding:0.5rem;
+    border-radius: 0.8rem;
     margin: 3rem 1rem;
     background-color: var(--primary-bg-color);
 }
@@ -15,6 +17,9 @@
 .sidebar-container{
     display: flex;
     flex-direction: column;
+    border: 0.01rem var(--primary-font-color) solid;
+    padding: 1rem 0.5rem;
+    border-radius: 0.8rem;
 }
 
 .sidebar-header {
@@ -33,4 +38,35 @@
 
 .price-sort-label{
     margin-right: 0.5rem;
+}
+
+.sort-price, option{
+    cursor: pointer;
+}
+
+.filter{
+    margin: 0.5rem 0rem;
+    justify-content: space-between;
+}
+
+input{
+    cursor: pointer;
+}
+
+.slider-price-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.price-slider-span-1{
+    margin-right: 1.5rem;
+}
+
+.price-slider-span-2{
+    margin-left: 1.5rem;
+}
+
+.price-slider{
+    margin: 0.5rem 0rem;
 }

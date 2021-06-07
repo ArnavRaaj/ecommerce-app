@@ -89,7 +89,7 @@ export const productList = [
         price: 1899,
         mrp: 1999,
         rating: 4.6,
-        inStock: true,
+        inStock: false,
         fastDelivery: false
     }, {
         id: uuidv4(),

@@ -122,6 +122,21 @@
     border-radius: 0.5rem 0.5rem 0.5rem 0rem;
 }
 
+/* empty cart & wishlist css */
+.empty-cart-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-cart-msg{
+    font-size: 4rem;
+}
+
+
 /******************* RESPONSIVE DESIGN *****************/
 @media screen and (max-width: 1200px) {
     .cart-container {
