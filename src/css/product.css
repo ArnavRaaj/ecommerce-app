@@ -109,6 +109,7 @@
 
     .product-listing-container {
         justify-content: center;
+        margin-top: 0rem;
     }
 
     .product-display-card {

@@ -210,4 +210,8 @@
     .cart-container {
         padding: 1rem;
     }
+    
+    .empty-cart-msg{
+        font-size: 3rem;
+    }
 }

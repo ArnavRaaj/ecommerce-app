@@ -1,10 +1,12 @@
-import { useState } from "react";
 import "../src/css/style.css";
+import {Link,} from "react-router-dom";
+import { useState } from "react";
 import { Home } from "./components/Home";
 import { Products } from "./components/products/Products";
 import { Cart } from "./components/cart/Cart";
 import { Wishlist } from "./components/wishlist/Wishlist";
 import { FiShoppingCart } from "react-icons/fi";
+import { FaRegUserCircle } from "react-icons/fa";
 import { BsHeart } from "react-icons/bs";
 import { useCart } from "./context/Cart-Context";
 import { useWish } from "./context/Wishlist-Context";
@@ -43,6 +45,10 @@ function App() {
               {wishState.itemsInWishlist.length}
             </span>
           </div>
+
+          <button className="btn" onClick={() => setRoute("wishlist")}>
+            <FaRegUserCircle className="nav-icons wishlist-icon" />
+          </button>
 
         </div>
       </nav>

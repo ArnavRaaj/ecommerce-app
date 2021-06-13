@@ -1,7 +1,6 @@
 import React from 'react'
 import { BsArrowLeftRight, BsFilterLeft } from "react-icons/bs";
 import { useProduct } from '../../context/Product-context';
-import { productList } from './ProductList';
 
 const filterByPrice = (productList, sortItemBy) => {
     if (sortItemBy === "highToLow") {
@@ -43,7 +42,7 @@ function Sidebar() {
             <h3 className="sidebar-header">
                 FILTERS <BsFilterLeft />
             </h3>
-            <div className="dropdown-sort">
+            <div className="dropdown-sort filter">
                 <label htmlFor="filtering-price" className="price-sort-label">
                     <BsArrowLeftRight className="sort-icon" />SORT BY
                 </label>
