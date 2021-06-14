@@ -1,13 +1,14 @@
 import React from 'react'
 import "../../css/product.css";
 import { productList } from "./ProductList";
+import { Sidebar } from './Sidebar';
 import { BiRupee } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
+import { FiShoppingCart } from "react-icons/fi"
+import { BsHeart } from "react-icons/bs"
+import { FaOpencart } from "react-icons/fa"
 import { useCart } from '../../context/Cart-Context';
 import { useWish } from '../../context/Wishlist-Context';
-import { BsHeart } from "react-icons/bs"
-import { FiShoppingCart } from "react-icons/fi"
-import { Sidebar } from './Sidebar';
 import { useProduct } from '../../context/Product-context';
 import { filterByPrice, filterByStock, filterByDelivery, filterByPriceRange } from "./Sidebar";
 
@@ -15,7 +16,7 @@ export function Products() {
     const { cartDispatch } = useCart();
     const { wishDispatch } = useWish();
     const { sortItemBy, sortStockBy, sortDeliveryBy, priceRange } = useProduct();
-    const filteredData = filterByPriceRange(filterByDelivery(filterByStock(filterByPrice(productList, sortItemBy),sortStockBy),sortDeliveryBy), priceRange);
+    const filteredData = filterByPriceRange(filterByDelivery(filterByStock(filterByPrice(productList, sortItemBy), sortStockBy), sortDeliveryBy), priceRange);
     // console.log(priceRange, "price --- range");
     // console.log(" filtered data.....",filteredData);
     return (
@@ -37,9 +38,17 @@ export function Products() {
                                 MRP< BiRupee className="icons rupee-icon" />{item.mrp}
                             </span>
                         </p>
-                        <p className="product-rating">
-                            {item.rating}/5 <AiFillStar className="icons rating-icon" />
-                        </p>
+                        <div className="rating-delivery-conatiner">
+                            <p className="product-rating">
+                                {item.rating}/5 <AiFillStar className="icons rating-icon" />
+                            </p>
+                            {item.fastDelivery &&
+                                <p className="fastdelivery">
+                                    <FaOpencart className="delivery-icon" /> fast Delivery
+                                </p>
+                            }
+
+                        </div>
                         <div className="btn-container">
                             {item.inStock &&
                                 <button

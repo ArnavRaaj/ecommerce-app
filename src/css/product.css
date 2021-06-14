@@ -53,16 +53,23 @@
     justify-content: center;
 }
 
-.product-rating {
-    margin: 0rem 0rem 0.5rem 0.5rem;
-
-}
-
 .btn-container {
     display: flex;
     flex-direction: column;
     align-self: auto;
     justify-content: center;
+}
+
+.rating-delivery-conatiner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0rem 0rem 0.5rem 0.5rem;
+}
+
+.fastdelivery {
+    margin-right: 1rem;
 }
 
 /* icons */
@@ -73,6 +80,10 @@
 
 .rating-icon {
     color: #ffb829 !important;
+}
+
+.delivery-icon {
+    color: green;
 }
 
 /* buttons */
@@ -113,7 +124,7 @@
     }
 
     .product-display-card {
-        margin: 1rem ; 
+        margin: 1rem;
         max-width: 25rem;
         width: 100%;
     }
