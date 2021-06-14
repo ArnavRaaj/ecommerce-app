@@ -213,5 +213,6 @@
     
     .empty-cart-msg{
         font-size: 3rem;
+        padding: 0rem 1rem;
     }
 }

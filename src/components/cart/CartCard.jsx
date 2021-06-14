@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from "../../context/Cart-Context";
 import { CartItem } from "./CartItem";
 import { CartTotalPrice } from './CartTotalPrice';
@@ -9,12 +10,17 @@ export function CartCard() {
     console.log(cartState.itemsInCart);
     return (
         <div>
-            { cartState.itemsInCart.length === 0
+            {cartState.itemsInCart.length === 0
                 ?
                 <div className="empty-cart-container">
                     <p className="empty-cart-msg">
                         Your Cart is empty
                     </p>
+                    <Link to="/products" className="shop-router">
+                        <button className="shop-router-btn">
+                            Shop Now
+                        </button>
+                    </Link>
                 </div>
                 :
                 <div className="cart-container">

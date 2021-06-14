@@ -2,6 +2,7 @@ import React from 'react'
 import { useWish } from '../../context/Wishlist-Context'
 import { WishItems } from "./WishItems";
 import "../../css/style.css";
+import { Link } from 'react-router-dom';
 
 export function Wishlist() {
     const { wishState, wishDispatch } = useWish();
@@ -11,9 +12,14 @@ export function Wishlist() {
                 ?
                 <div className="empty-cart-container">
                     <p className="empty-cart-msg">
-                        Your Wishlist is empty. 
+                        Your Wishlist is empty.
                         Let's make some wishes!
                     </p>
+                    <Link to="/products">
+                        <button className="shop-router-btn">
+                            Continue Browsing
+                        </button>
+                    </Link>
                 </div>
                 :
                 <div className="wishlist-container">

@@ -26,3 +26,11 @@
     margin: 0.5rem 0rem;
 }
 
+.shop-router-btn{
+    background-color: var(--secondary-bg-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0.5rem 0rem;
+    font-size: 1rem;
+}
